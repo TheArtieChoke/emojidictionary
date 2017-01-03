@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var myTableView: UITableView!
     
+    var emojis = ["😀","😆","🤠","🤡","😱","😤","😌","😟","🤢","😡"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,13 +25,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return emojis.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Hello World"
+        // Assigns emoji to Row for segue
+        cell.textLabel?.text = emojis[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let emoji = emojis[indexPath.row]
+        // Deselect row (Get rid of Grey)
+        tableView.deselectRow(at: indexPath, animated: true)
+        // Go to second view
+        performSegue(withIdentifier: "moveSegway", sender: emoji)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secVC = segue.destination as! SecondViewController
+        secVC.emoji = sender as! String
     }
     
     override func didReceiveMemoryWarning() {
