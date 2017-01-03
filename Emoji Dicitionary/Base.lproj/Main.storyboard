@@ -68,18 +68,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkm-MP-6gD">
+                                <rect key="frame" x="152" y="454" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJm-YG-sry">
+                                <rect key="frame" x="170.5" y="495" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t5K-bR-nDA" firstAttribute="centerX" secondItem="Nmz-DD-z9M" secondAttribute="centerX" id="83C-B8-iEl"/>
                             <constraint firstItem="vy4-3o-Y7i" firstAttribute="centerX" secondItem="Nmz-DD-z9M" secondAttribute="centerX" id="Qgj-Pa-Dn0"/>
+                            <constraint firstItem="Xkm-MP-6gD" firstAttribute="centerX" secondItem="Nmz-DD-z9M" secondAttribute="centerX" id="T98-OX-KDX"/>
+                            <constraint firstItem="HJm-YG-sry" firstAttribute="centerX" secondItem="Nmz-DD-z9M" secondAttribute="centerX" id="UDG-fH-3HN"/>
+                            <constraint firstItem="HJm-YG-sry" firstAttribute="top" secondItem="Xkm-MP-6gD" secondAttribute="bottom" constant="20" id="Uhg-T3-DzR"/>
                             <constraint firstItem="vy4-3o-Y7i" firstAttribute="top" secondItem="CT8-UB-the" secondAttribute="bottom" constant="40" id="ZlE-dn-AzZ"/>
                             <constraint firstItem="t5K-bR-nDA" firstAttribute="top" secondItem="vy4-3o-Y7i" secondAttribute="bottom" constant="50" id="eXq-1b-WMG"/>
+                            <constraint firstItem="Xkm-MP-6gD" firstAttribute="top" secondItem="t5K-bR-nDA" secondAttribute="bottom" constant="40" id="vbf-Ah-4Zf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="Xkm-MP-6gD" id="8dl-MX-Ya8"/>
                         <outlet property="definitionLabel" destination="t5K-bR-nDA" id="XaW-dd-7th"/>
                         <outlet property="selectedEmoji" destination="vy4-3o-Y7i" id="WO9-cK-b4J"/>
+                        <outlet property="yearLabel" destination="HJm-YG-sry" id="jIv-kE-pSo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijj-JL-r5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +107,6 @@
         <!--Navigation Controller-->
         <scene sceneID="R2z-jP-wYl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iAN-2n-wHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4CW-m3-b3b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D90-VD-a8w">
@@ -101,6 +118,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7fX-Ep-XyV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAN-2n-wHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-98.400000000000006" y="123.68815592203899"/>
         </scene>

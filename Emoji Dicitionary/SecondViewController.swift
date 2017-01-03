@@ -12,15 +12,20 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var selectedEmoji: UILabel!
     @IBOutlet weak var definitionLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     
-    var emoji = "NO EMOJI"
+    var emoji = Emoji()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        selectedEmoji.text = emoji
+        selectedEmoji.text = emoji.stringEmoji
+        yearLabel.text = "Year: \(emoji.year)"
+        definitionLabel.text = emoji.defintion
+        categoryLabel.text = emoji.category
         
         //  emojis = ["😀","😆","🤠","🤡","😱","😤","😌","😟","🤢","😡"]
         
@@ -49,31 +54,39 @@ class SecondViewController: UIViewController {
         //                }
         
         // My Switch statement (Preffered)
-        
-        switch emoji {
-        case "😀":
-            definitionLabel.text = "What a Smile!"
-        case "😆":
-            definitionLabel.text = "Evil smile"
-        case "🤠":
-            definitionLabel.text = "Cowboy William"
-        case "🤡":
-            definitionLabel.text = "Clown Season"
-        case "😱":
-            definitionLabel.text = "Shocking Emoji!"
-        case "😤":
-            definitionLabel.text = "Frustrated"
-        case "😌":
-            definitionLabel.text = "Pure Bliss"
-        case "😟":
-            definitionLabel.text = "Why you do that?"
-        case "🤢":
-            definitionLabel.text = "You make me sick"
-        case "😡":
-            definitionLabel.text = "Piss Off!"
-        default:
-            definitionLabel.text = "Nothing Selected!"
-        }
+//        
+//        switch emoji {
+//        case "😀":
+//            definitionLabel.text = "What a Smile!"
+//            categoryLabel.text = "Category: Faces"
+//            yearLabel.text = "2007"
+//        case "😆":
+//            definitionLabel.text = "Evil smile"
+//            categoryLabel.text = "Category: Faces"
+//            yearLabel.text = "2007"
+//        case "🤠":
+//            definitionLabel.text = "Cowboy William"
+//            categoryLabel.text = "Category: Faces"
+//            yearLabel.text = "2012"
+//        case "🤡":
+//            definitionLabel.text = "Clown Season"
+//            categoryLabel.text = "Category: Faces"
+//            yearLabel.text = "2016"
+//        case "😱":
+//            definitionLabel.text = "Shocking Emoji!"
+//        case "😤":
+//            definitionLabel.text = "Frustrated"
+//        case "😌":
+//            definitionLabel.text = "Pure Bliss"
+//        case "😟":
+//            definitionLabel.text = "Why you do that?"
+//        case "🤢":
+//            definitionLabel.text = "You make me sick"
+//        case "😡":
+//            definitionLabel.text = "Piss Off!"
+//        default:
+//            definitionLabel.text = "Nothing Selected!"
+//        }
         
     }
     
